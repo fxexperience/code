@@ -1,0 +1,120 @@
+#ContentArea {
+    -fx-background-image: url("images/background.png");
+    -fx-background: black;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.4) , 80, 0.0 , 0 , 0 );
+}
+#ContentPanel {
+    -fx-background-color: -fx-background;
+    -fx-border-color: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 2 );
+}
+#PropertiesPanel {
+    -fx-background-color: #eeeeee;
+    -fx-background: #eeeeee;
+    -fx-base: #dddddd;
+    -fx-font-size: 12px;
+    -fx-padding: 10px;
+    -fx-border-color: transparent transparent transparent black;
+    
+    -fx-shadow-highlight-color: white;
+    -fx-outer-border: derive(-fx-color, -20%);
+    -fx-inner-border: linear-gradient(
+        to bottom,
+        derive(-fx-color, 58%) 0%,
+        derive(-fx-color, 2%) 100%
+    );
+    -fx-body-color: linear-gradient(
+        to bottom,
+        derive(-fx-color, 35%) 0%,
+        derive(-fx-color, -6%) 100%
+    );
+}
+#PropertiesPanel .title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+/*    -fx-border-color: transparent transparent derive(-fx-background, 10%) transparent;*/
+}
+#PropertiesPanel .prop-label{
+    -fx-text-fill: #555555;
+}
+.integer-field {
+    -fx-alignment: BASELINE_LEFT;
+}
+.color-picker {
+    -fx-background-color: transparent;
+}
+.highlight-off-symbol {
+    -fx-background-color: #888888, -fx-background;
+    -fx-background-insets: 0,1;
+    -fx-background-radius: 4,3;
+    -fx-padding: 4;
+}
+.highlight-on-symbol {
+    -fx-background-color: #888888;
+    -fx-background-insets: 0;
+    -fx-background-radius: 4;
+    -fx-padding: 4;
+}
+/* ==== BIG BLUE BUTTON ===================================================== */
+.big-button {
+    -fx-base: #73BEE1;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-inner-border: linear-gradient(
+        to bottom,
+        derive(-fx-color, 35%) 0%,
+        derive(-fx-color, -6%) 100%
+    );
+    -fx-text-fill: #444444;
+    -fx-padding: 5 10 5 10;
+}
+.big-button Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(255,255,255,0.6) , 0, 0.0 , 0 , 1 );
+}
+/* ==== SWITCH STYLED CHECKBOX ============================================== */
+.switch .box{
+    -fx-background-color: transparent;
+    -fx-padding: 16 53 0 0;
+    -fx-background-image: url("images/off.png");
+}
+.switch:selected .box {
+    -fx-background-color: transparent;
+    -fx-background-image: url("images/on.png");
+}
+.switch:focused .box{
+    -fx-background-color: -fx-focus-color;
+    -fx-padding: 16 53 0 0;
+    -fx-background-image: url("images/off.png");   
+    -fx-background-insets: -1.4;
+    -fx-background-radius: 3;
+}
+.switch:focused:selected .box {
+    -fx-background-color: -fx-focus-color;
+    -fx-background-image: url("images/on.png");    
+    -fx-background-insets: -1.4;
+    -fx-background-radius: 4;
+}
+.switch .mark {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+/* ==== TOOLS TOOLBAR ============================================== */
+#ToolsToolbar {
+    -fx-font-size: 12px;
+    -fx-background-color: #1b1b1b;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.4) , 6, 0.0 , 0 , 0 );
+}
+#ToolsToolbar .toggle-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+}
+
+#ToolsToolbar .toggle-button:selected {
+    -fx-background-color: rgba(31,179,255,0.28);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-text-fill: #92bcd1;
+}

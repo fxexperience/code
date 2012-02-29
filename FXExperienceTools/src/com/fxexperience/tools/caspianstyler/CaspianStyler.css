@@ -1,0 +1,9 @@
+#gradientComboBox .list-cell {
+    -fx-padding: 0 0 0 7;
+    -fx-cell-size: 40;
+}
+
+#gradientComboBox .combo-box-popup .list-view .list-cell {
+    -fx-padding: 4 0 4 5;
+    -fx-cell-size: 40;
+}

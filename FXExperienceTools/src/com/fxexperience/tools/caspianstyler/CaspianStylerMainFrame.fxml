@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?stylesheet true:CaspianStyler.css?>
+<?stylesheet true:../Tools.css?>
+
+<AnchorPane id="AnchorPane" prefHeight="708.0" prefWidth="1060.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.fxexperience.tools.caspianstyler.CaspianStylerMainFrame">
+  <children>
+    <StackPane id="ContentArea" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <GridPane id="ContentPanel" fx:id="contentPanel" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" vgap="10.0">
+          <children>
+            <Button id="button1" text="Button" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ToggleButton id="toggleButton1" text="ToggleButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+            <CheckBox id="checkBox1" text="CheckBox" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="CENTER" />
+            <RadioButton id="radioButton1" text="RadioButton" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+            <CheckBox id="checkBox2" indeterminate="true" selected="true" text="CheckBox" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <RadioButton id="radioButton2" selected="true" text="RadioButton" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <ToggleButton id="toggleButton2" selected="true" text="ToggleButton" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <CheckBox id="checkBox3" selected="true" text="CheckBox" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <MenuButton id="menuButton1" text="MenuButton" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+              <items>
+                <MenuItem text="Action 1" />
+                <MenuItem text="Action 2" />
+              </items>
+            </MenuButton>
+            <ChoiceBox fx:id="choiceBox" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="ChoiceBox" />
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ChoiceBox>
+            <ComboBox fx:id="comboBox" minWidth="-Infinity" value="ComboBox" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="ComboBox" />
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <ComboBox fx:id="comboBox2" editable="true" minWidth="-Infinity" value="Editable ComboBox" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Editable ComboBox" />
+                  <String fx:value="Item 1" />
+                  <String fx:value="Item 2" />
+                  <String fx:value="Item 3" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <Hyperlink id="hyperlink1" text="Hyperlink" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label id="label1" text="Label" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+            <Slider id="sliderVertical1" orientation="VERTICAL" prefHeight="60.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Slider id="sliderHorizontal1" prefWidth="130.0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <ScrollBar id="scrollBarHorizontal1" maxWidth="-Infinity" prefWidth="100.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <ScrollBar id="scrollBarVertical1" orientation="VERTICAL" prefHeight="60.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <TextField id="textField1" maxHeight="-Infinity" text="TextField" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+            <PasswordField id="passwordField1" maxHeight="-Infinity" text="Password" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+            <TextArea id="textArea1" prefHeight="60.0" prefWidth="150.0" text="TextArea" wrapText="true" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+          </columnConstraints>
+          <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+          <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+      <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+      </padding>
+    </StackPane>
+    <GridPane id="PropertiesPanel" fx:id="propertiesPanel" hgap="5.0" prefHeight="708.0" prefWidth="350.0" vgap="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label id="label2" maxWidth="5000.0" styleClass="title" text="Text" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+        <Label id="label3" minWidth="-Infinity" styleClass="prop-label" text="Padding:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+        <Label id="label5" minWidth="-Infinity" styleClass="prop-label" text="Border Width:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+        <Label id="label7" minWidth="-Infinity" styleClass="prop-label" text="Radius:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+        <Slider fx:id="paddingSlider" max="20.0" prefWidth="200.0" value="3.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Slider fx:id="borderWidthSlider" max="20.0" prefWidth="200.0" value="1.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Slider fx:id="borderRadiusSlider" max="30.0" prefWidth="200.0" value="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Label id="label4" maxWidth="5000.0" styleClass="title" text="Sizes" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+        <Label id="label12" minWidth="-Infinity" styleClass="prop-label" text="Font Size:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+        <Label id="label13" minWidth="-Infinity" styleClass="prop-label" text="Font:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+        <Slider fx:id="fontSizeSlider" max="30.0" min="6.0" prefWidth="200.0" value="13.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <ChoiceBox fx:id="fontChoiceBox" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <CheckBox fx:id="fontDefaultCheckBox" minWidth="-Infinity" selected="true" text="Default" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <HBox spacing="10.0" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.rowIndex="10">
+          <children>
+            <Button fx:id="copyCSS" maxWidth="5000.0" styleClass="big-button" text="Copy Stylesheet" HBox.hgrow="ALWAYS" />
+            <Button fx:id="saveCSS" maxWidth="5000.0" styleClass="big-button" text="Save Stylesheet" HBox.hgrow="ALWAYS" />
+          </children>
+        </HBox>
+        <TabPane fx:id="tabPane1" styleClass="floating" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="8">
+          <tabs>
+            <Tab id="Simple" text="Simple">
+              <content>
+                <GridPane fx:id="simpleGridPane" hgap="5.0" vgap="5.0">
+                  <children>
+                    <Label id="label6" styleClass="title" text="Colors" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+                    <Label id="label8" minWidth="-Infinity" styleClass="prop-label" text="Base:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                    <Label id="label9" minWidth="-Infinity" styleClass="prop-label" text="Background:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                    <Label id="label10" minWidth="-Infinity" styleClass="prop-label" text="Focus:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+                    <Label id="label11" minWidth="-Infinity" styleClass="prop-label" text="Text on Base:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                    <Label id="label14" minWidth="-Infinity" styleClass="prop-label" text="Field Background:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                    <Label id="label17" minWidth="-Infinity" styleClass="title" text="Style" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+                    <Label id="label15" minWidth="-Infinity" styleClass="prop-label" text="Top Highlight:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+                    <Label id="label16" minWidth="-Infinity" styleClass="prop-label" text="Bottom Highlight:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
+                    <HBox id="hBox1" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="topHighlightSlider" prefWidth="200.0" value="60.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <HBox id="hBox1" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="10">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="bottomHighlightSlider" prefWidth="200.0" value="40.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <Label id="label18" minWidth="-Infinity" styleClass="prop-label" text="Gradient:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="11" />
+                    <CheckBox fx:id="textColorAutoComboBox" selected="true" text="Auto" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                    <ComboBox fx:id="gradientComboBox" maxWidth="5000.0" minWidth="-Infinity" pickOnBounds="true" prefHeight="40.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="11" />
+                    <Label id="label37" styleClass="prop-label" text="Field Text:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                    <CheckBox fx:id="fieldTextAutoCheckBox" selected="true" text="Auto" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                    <Label id="label20" minWidth="-Infinity" styleClass="prop-label" text="Text on Background:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                    <CheckBox fx:id="bkgdTextColorAutoComboBox" selected="true" text="Auto" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                    <ColumnConstraints hgrow="SOMETIMES" />
+                  </columnConstraints>
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="ALWAYS" />
+                  </rowConstraints>
+                </GridPane>
+              </content>
+            </Tab>
+            <Tab id="Advanced" text="Advanced">
+              <content>
+                <GridPane fx:id="advancedGridPane" hgap="5.0" vgap="5.0">
+                  <children>
+                    <Label id="label32" styleClass="title" text="Button Look" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="0" />
+                    <Label id="label25" minWidth="-Infinity" styleClass="prop-label" text="Top:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                    <Label id="label26" minWidth="-Infinity" styleClass="prop-label" text="Top Middle:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                    <Label id="label26" minWidth="-Infinity" styleClass="prop-label" text="Bottom Middle:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                    <Label id="label26" minWidth="-Infinity" styleClass="prop-label" text="Bottom:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                    <Label id="label30" minWidth="-Infinity" styleClass="prop-label" text="Border:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                    <Label id="label31" minWidth="-Infinity" styleClass="prop-label" text="Shadow:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                    <Label id="label21" styleClass="title" text="Input Look" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="7" />
+                    <Label id="label23" minWidth="-Infinity" styleClass="prop-label" text="Border:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+                    <Label id="label24" minWidth="-Infinity" styleClass="prop-label" text="Outer Border:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+                    <CheckBox fx:id="bodyTopMiddleComboBox" minWidth="-Infinity" styleClass="switch" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                    <CheckBox fx:id="bodyBottomMiddleComboBox" minWidth="-Infinity" styleClass="switch" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                    <CheckBox fx:id="borderComboBox" minWidth="-Infinity" styleClass="switch" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                    <CheckBox fx:id="shadowComboBox" minWidth="-Infinity" styleClass="switch" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                    <CheckBox fx:id="inputBorderComboBox" minWidth="-Infinity" styleClass="switch" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                    <CheckBox fx:id="inputOuterBorderComboBox" minWidth="-Infinity" styleClass="switch" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                    <HBox id="hBox3" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="bodyTopSlider" min="-100.0" prefWidth="200.0" value="20.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <HBox id="hBox3" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="bodyTopMiddleSlider" min="-100.0" prefWidth="200.0" value="20.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <HBox id="hBox3" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="bodyBottomMiddleSlider" min="-100.0" prefWidth="200.0" value="20.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <HBox id="hBox3" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="bodyBottomSlider" min="-100.0" prefWidth="200.0" value="20.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <HBox id="hBox3" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="borderSlider" min="-100.0" prefWidth="200.0" value="20.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <HBox id="hBox3" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="shadowSlider" min="-100.0" prefWidth="200.0" value="20.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <HBox id="hBox3" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="inputBorderSlider" min="-100.0" prefWidth="200.0" value="20.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                    <HBox id="hBox3" alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                      <children>
+                        <StackPane id="stackPane2" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-off-symbol" HBox.hgrow="NEVER" />
+                        <Slider fx:id="inputOuterBorderSlider" min="-100.0" prefWidth="200.0" value="20.0" />
+                        <StackPane id="stackPane1" maxHeight="-Infinity" maxWidth="-Infinity" styleClass="highlight-on-symbol" />
+                      </children>
+                    </HBox>
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" />
+                    <ColumnConstraints hgrow="SOMETIMES" />
+                    <ColumnConstraints hgrow="SOMETIMES" />
+                  </columnConstraints>
+                  <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                  <rowConstraints>
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                    <RowConstraints vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+        <Label id="label19" styleClass="title" text="Styling" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="7" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" />
+        <ColumnConstraints hgrow="SOMETIMES" />
+        <ColumnConstraints hgrow="SOMETIMES" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="SOMETIMES" />
+        <RowConstraints vgrow="ALWAYS" />
+        <RowConstraints vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>

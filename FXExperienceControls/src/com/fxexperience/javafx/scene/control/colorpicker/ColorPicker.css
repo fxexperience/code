@@ -1,0 +1,50 @@
+.color-picker-popover {
+    -fx-font-size: 10px;
+    -fx-base: #5f5f5f;
+    -fx-background: #313131;
+    -fx-control-inner-background: #5f5f5f;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.integer-field {
+    -fx-alignment: BASELINE_LEFT;
+    -fx-text-fill: white;
+}
+.webcolor-field {
+    -fx-alignment: BASELINE_LEFT;
+    -fx-text-fill: white;
+}
+
+#BrightnessSlider .track {
+    -fx-background-color:
+        derive(-fx-background,50%),
+        derive(-fx-background,-22%),
+        linear-gradient(to right, black, white);
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 8, 8, 7;
+    -fx-padding: 7px;
+    -fx-effect: innershadow(two-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1);
+}
+
+#BrightnessSlider  .thumb{
+    -fx-padding: 7px;
+}
+
+#SaturationSlider .track {
+    -fx-background-color:
+        derive(-fx-background,50%),
+        derive(-fx-background,-22%),
+        linear-gradient(to right, white, picker-color);
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 8, 8, 7;
+    -fx-background-radius: 8,7;
+    -fx-padding: 7px;
+    -fx-effect: innershadow(two-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1);
+}
+
+#SaturationSlider .thumb {
+    -fx-padding: 7px;
+}

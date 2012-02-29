@@ -1,0 +1,26 @@
+#anchorPane {
+    -fx-background-image: url("dark_wood.png");
+    -fx-background: black;
+}
+#gridPane {
+    -fx-background-color: radial-gradient(center 35% 40%, radius 70%, rgba(255,255,255,0.3), rgba(255,255,255,0.05));
+}
+.label {
+    -fx-text-fill: white;
+}
+.slider .track {
+    -fx-background-color:
+        transparent,
+        derive(-fx-color,-90%),
+        linear-gradient(to bottom, derive(-fx-color,-15.5%), derive(-fx-color,34%) 30%, derive(-fx-color,68%));
+}
+
+.slider .thumb {
+    -fx-background-color:
+        derive(-fx-color,-90%),
+        derive(-fx-color,73%),
+        linear-gradient(to bottom, derive(-fx-color,-19%),derive(-fx-color,61%));
+}
+.color-picker {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+}
