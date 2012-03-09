@@ -1,0 +1,38 @@
+.button {
+    -fx-font-family: 'Lato';
+    -fx-font-size: 14px;
+}
+
+#animateTest {
+    -fx-background-color: 
+        #083156,
+        #657c87,
+        #46626f,
+        #123, 
+        linear-gradient(#234,#345,#234), 
+        linear-gradient(from 30% -10% to 70% 110%, rgba(100,155,155,0), rgba(100,155,155,.1) 50%, rgba(0,0,0,0) 50%);
+    -fx-background-radius: 6,5,5,4,4,6;
+    -fx-background-insets: 0, 1,2 1 1 1,2,2, 0;
+    -fx-font-family: 'Francois One';
+    -fx-font-size: 18px;
+    -fx-padding: 25px 35px;
+    -fx-text-fill: #def;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,155,255,.3) , 7 , 0.4 , 0 , 0 );
+}
+
+#animateTest .text {
+    text-shadow: 0 1px 1px rgba(0,0,0,.7);
+}
+
+#animateTestArea {
+    -fx-background-color: #EEEEEE;
+}
+
+.section-label {
+    -fx-font-family: 'Francois One';
+    -fx-font-size: 18px;
+}
+.scroll-pane {
+    -fx-background-color: transparent;
+}
