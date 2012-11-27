@@ -1,6 +1,5 @@
 package com.fxexperience.tools.derivationcalc;
 
-import com.fxexperience.javafx.scene.control.colorpicker.ColorPicker;
 import com.sun.javafx.Utils;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -9,6 +8,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
@@ -55,15 +55,15 @@ public class DerivationCalcContent implements Initializable {
         derivedResultColor.setPrefSize(50, 20);
         derivedResultLabel.setGraphic(derivedResultColor);
         derivedResultColor.styleProperty().bind(new StringBinding() {
-            { bind(derivationSlider.valueProperty(),baseColorPicker.colorProperty()); }
+            { bind(derivationSlider.valueProperty(),baseColorPicker.valueProperty()); }
             @Override protected String computeValue() {
-                return "-fx-border-color: black; -fx-background-color: derive("+baseColorPicker.getWebColor()+", "+derivationSlider.getValue()+"%);";
+                return "-fx-border-color: black; -fx-background-color: derive("+getWebColor(baseColorPicker.getValue())+", "+derivationSlider.getValue()+"%);";
             }
         });
         derivedResultLabel.textProperty().bind(new StringBinding() {
-            { bind(derivationSlider.valueProperty(),baseColorPicker.colorProperty()); }
+            { bind(derivationSlider.valueProperty(),baseColorPicker.valueProperty()); }
             @Override protected String computeValue() {
-                Color base = baseColorPicker.getColor();
+                Color base = baseColorPicker.getValue();
                 double derivation = derivationSlider.getValue();
                 Color result = Utils.deriveColor(base, derivation/100);
                 return getColorString(result);
@@ -78,13 +78,13 @@ public class DerivationCalcContent implements Initializable {
                 updateReverse();
             }
         };
-        baseColorPicker.colorProperty().addListener(updateReverse);
-        desiredColorPicker.colorProperty().addListener(updateReverse);
+        baseColorPicker.valueProperty().addListener(updateReverse);
+        desiredColorPicker.valueProperty().addListener(updateReverse);
     }    
     
     private void updateReverse() {
-        Color desiredColor = desiredColorPicker.getColor();
-        final Color base = baseColorPicker.getColor();
+        Color desiredColor = desiredColorPicker.getValue();
+        final Color base = baseColorPicker.getValue();
 //                System.out.println("base = " + base);
         double desiredBrightness = desiredColor.getBrightness();
 //                System.out.println("desiredBrightness = " + desiredBrightness);

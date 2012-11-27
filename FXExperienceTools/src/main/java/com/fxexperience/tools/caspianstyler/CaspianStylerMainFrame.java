@@ -1,7 +1,7 @@
 package com.fxexperience.tools.caspianstyler;
 
 import com.fxexperience.javafx.scene.control.IntegerField;
-import com.fxexperience.javafx.scene.control.colorpicker.ColorPicker;
+import static com.fxexperience.javafx.scene.control.colorpicker.ColorPicker.getWebColor;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
@@ -135,17 +135,17 @@ public class CaspianStylerMainFrame implements Initializable {
         GridPane.setConstraints(fieldBackgroundPicker, 1, 5);
         GridPane.setConstraints(fieldTextColorPicker, 1, 6);
         GridPane.setConstraints(focusColorPicker, 1, 7);
-        baseColorPicker.colorProperty().addListener(updateCssListener);
-        backgroundColorPicker.colorProperty().addListener(updateCssListener);
-        focusColorPicker.colorProperty().addListener(updateCssListener);
-        textColorPicker.colorProperty().addListener(updateCssListener);
+        baseColorPicker.valueProperty().addListener(updateCssListener);
+        backgroundColorPicker.valueProperty().addListener(updateCssListener);
+        focusColorPicker.valueProperty().addListener(updateCssListener);
+        textColorPicker.valueProperty().addListener(updateCssListener);
         textColorAutoComboBox.selectedProperty().addListener(updateCssListener);
         textColorPicker.disableProperty().bind(textColorAutoComboBox.selectedProperty());
-        fieldBackgroundPicker.colorProperty().addListener(updateCssListener);
-        fieldTextColorPicker.colorProperty().addListener(updateCssListener);
+        fieldBackgroundPicker.valueProperty().addListener(updateCssListener);
+        fieldTextColorPicker.valueProperty().addListener(updateCssListener);
         fieldTextAutoCheckBox.selectedProperty().addListener(updateCssListener);
         fieldTextColorPicker.disableProperty().bind(fieldTextAutoCheckBox.selectedProperty());
-        bkgdTextColorPicker.colorProperty().addListener(updateCssListener);
+        bkgdTextColorPicker.valueProperty().addListener(updateCssListener);
         bkgdTextColorAutoComboBox.selectedProperty().addListener(updateCssListener);
         bkgdTextColorPicker.disableProperty().bind(bkgdTextColorAutoComboBox.selectedProperty());
         // add listeners to sliders
@@ -277,18 +277,18 @@ public class CaspianStylerMainFrame implements Initializable {
         }
         cssBuffer.append("    -fx-font-family: \""+fontChoiceBox.getValue()+"\";\n");
         cssBuffer.append("    -fx-font-size: "+fontSizeSlider.getValue()+"px;\n");
-        cssBuffer.append("    -fx-base: "+baseColorPicker.getWebColor()+";\n");
-        cssBuffer.append("    -fx-background: "+backgroundColorPicker.getWebColor()+";\n");
-        cssBuffer.append("    -fx-focus-color: "+focusColorPicker.getWebColor()+";\n");
-        cssBuffer.append("    -fx-control-inner-background: "+fieldBackgroundPicker.getWebColor()+";\n");
+        cssBuffer.append("    -fx-base: "+getWebColor(baseColorPicker.getValue())+";\n");
+        cssBuffer.append("    -fx-background: "+getWebColor(backgroundColorPicker.getValue())+";\n");
+        cssBuffer.append("    -fx-focus-color: "+getWebColor(focusColorPicker.getValue())+";\n");
+        cssBuffer.append("    -fx-control-inner-background: "+getWebColor(fieldBackgroundPicker.getValue())+";\n");
         if (!textColorAutoComboBox.isSelected()) {
-            cssBuffer.append("    -fx-text-base-color: "+textColorPicker.getWebColor()+";\n");
+            cssBuffer.append("    -fx-text-base-color: "+getWebColor(textColorPicker.getValue())+";\n");
         }
         if (!bkgdTextColorAutoComboBox.isSelected()) {
-            cssBuffer.append("    -fx-text-background-color: "+bkgdTextColorPicker.getWebColor()+";\n");
+            cssBuffer.append("    -fx-text-background-color: "+getWebColor(bkgdTextColorPicker.getValue())+";\n");
         }
         if (!fieldTextAutoCheckBox.isSelected()) {
-            cssBuffer.append("    -fx-text-inner-color: "+fieldTextColorPicker.getWebColor()+";\n");
+            cssBuffer.append("    -fx-text-inner-color: "+getWebColor(fieldTextColorPicker.getValue())+";\n");
         }
         
         

@@ -75,7 +75,7 @@ public class ColorPicker extends Button {
         setGraphic(colorRect);
     }
     
-    private static String getWebColor(Color color) {
+    public static String getWebColor(Color color) {
         final int red = (int)(color.getRed()*255);
         final int green = (int)(color.getGreen()*255);
         final int blue = (int)(color.getBlue()*255);
