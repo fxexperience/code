@@ -1,0 +1,139 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 24, 2017, 4:00:53 AM
+    Author     : ericc
+*/
+#gradientComboBox .list-cell {
+    -fx-background-color:  rgb(74,74, 74); 
+    -fx-text-fill: #e3e3e3;
+    -fx-padding: 0 0 0 0;
+    -fx-cell-size: 40;
+}
+
+#gradientComboBox .combo-box-popup .list-view .list-cell {
+    -fx-padding: 4 0 4 5;
+    -fx-cell-size: 40;
+}
+.choice-box-font {
+    -fx-background-color:  rgb(74,74, 74); 
+}
+
+.slider-prop .track{
+    -fx-background-color: rgb(144,144, 144); 
+}
+.slider-prop .thumb{
+    -fx-background-color: rgb(166,166, 166); 
+}
+#Gridpane-advanced, #PropertiesPanel {
+    -fx-background-color:  #545454;  
+
+}
+#Simple, #Advanced {
+    -fx-background-color: rgb(144,144, 144); 
+}
+.title {
+    -fx-text-fill: #e3e3e3;
+}
+
+.prop {
+    -fx-text-fill: #e3e3e3;
+}
+
+.check-box-prop {
+    -fx-text-fill: #e3e3e3;
+}
+
+#GridPane-Properties {
+    -fx-background-color: #545454;  
+}
+
+#input-text-field {
+    -fx-skin: "com.sun.javafx.scene.control.skin.TextFieldSkin";
+    -fx-text-fill: #e3e3e3;
+
+}
+
+.input-field {
+    -fx-skin: "com.fxexperience.javafx.scene.control.skin.InputFieldSkin";
+    -fx-background-color:  rgb(74,74, 74); 
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+    -fx-padding: 3 5 3 5;
+    -fx-prompt-text-fill: #e3e3e3;
+    -fx-cursor: text;
+}
+
+.input-field:focused {
+    -fx-background-color:  rgb(74,74, 74); 
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-radius: 3.4, 2, 2;
+}
+
+.input-field:disabled {
+    -fx-opacity: -fx-disabled-opacity;
+}
+
+.integer-field {
+    -fx-skin: "com.fxexperience.javafx.scene.control.skin.IntegerFieldSkin";
+    -fx-background-color:  rgb(74,74, 74); 
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+    -fx-padding: 3 5 3 5;
+    -fx-prompt-text-fill: #e3e3e3;
+    -fx-cursor: text;
+}
+
+.integer-field:focused {
+    -fx-background-color:  rgb(74,74, 74); 
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-radius: 3.4, 2, 2;
+}
+
+.integer-field:disabled {
+    -fx-opacity: -fx-disabled-opacity;
+}
+
+.double-field {
+    -fx-skin: "com.fxexperience.javafx.scene.control.skin.DoubleFieldSkin";
+    -fx-background-color:  rgb(74,74, 74); 
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+    -fx-padding: 3 5 3 5;
+    -fx-prompt-text-fill: #e3e3e3;
+    -fx-cursor: text;
+}
+
+.double-field:focused {
+    -fx-background-color:  rgb(74,74, 74); 
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-radius: 3.4, 2, 2;
+}
+
+.double-field:disabled {
+    -fx-opacity: -fx-disabled-opacity;
+}
+
+
+.webcolor-field {
+    -fx-skin: "com.fxexperience.javafx.scene.control.skin.WebColorFieldSkin";
+    -fx-background-color:  rgb(74,74, 74); 
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 3, 2, 2;
+    -fx-padding: 3 5 3 5;
+    -fx-prompt-text-fill: #e3e3e3;
+    -fx-cursor: text;
+}
+
+.webcolor-field:focused {
+    -fx-background-color:  rgb(74,74, 74);
+    -fx-background-insets: -0.4, 1, 2;
+    -fx-background-radius: 3.4, 2, 2;
+}
+
+.webcolor-field:disabled {
+    -fx-opacity: -fx-disabled-opacity;
+}

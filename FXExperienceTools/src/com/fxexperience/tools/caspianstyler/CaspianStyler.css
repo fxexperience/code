@@ -1,9 +1,29 @@
 #gradientComboBox .list-cell {
-    -fx-padding: 0 0 0 7;
-    -fx-cell-size: 40;
+    -fx-text-fill: #DCDCDC;
+   -fx-padding: 0 0 0 7;
+   -fx-background-insets: -1;
+    -fx-cell-size: 15;
+}
+
+.arrow-button {
+    -fx-background-color: #444444;
+     -fx-background-insets: -1;
+}
+.font-choice-box .context-menu {
+     -fx-text-fill:  #DCDCDC;
+      -fx-background-color: rgb(74,74, 74); 
+}
+.font-choice-box .label {
+     -fx-text-fill:  #DCDCDC;
+}
+
+.font-choice-box{
+    -fx-text-fill:  #DCDCDC;
+    -fx-background-color: rgb(74,74, 74); 
 }
 
 #gradientComboBox .combo-box-popup .list-view .list-cell {
+     -fx-text-fill: #DCDCDC;
     -fx-padding: 4 0 4 5;
-    -fx-cell-size: 40;
+    -fx-cell-size: 15;
 }
