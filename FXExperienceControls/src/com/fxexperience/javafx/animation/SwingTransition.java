@@ -2,7 +2,7 @@ package com.fxexperience.javafx.animation;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
@@ -30,8 +30,7 @@ public class SwingTransition extends CachedTimelineTransition {
     public SwingTransition(final Node node) {
         super(
             node,
-            TimelineBuilder.create()
-                .keyFrames(
+          new Timeline(
                     new KeyFrame(Duration.millis(0), new KeyValue(node.rotateProperty(), 0, WEB_EASE)),
                     new KeyFrame(Duration.millis(200), new KeyValue(node.rotateProperty(), 15, WEB_EASE)),
                     new KeyFrame(Duration.millis(400), new KeyValue(node.rotateProperty(), -10, WEB_EASE)),
@@ -39,7 +38,6 @@ public class SwingTransition extends CachedTimelineTransition {
                     new KeyFrame(Duration.millis(800), new KeyValue(node.rotateProperty(), -5, WEB_EASE)),
                     new KeyFrame(Duration.millis(1000), new KeyValue(node.rotateProperty(), 0, WEB_EASE))
                 )
-                .build()
             );
         setCycleDuration(Duration.seconds(1));
         setDelay(Duration.seconds(0.2));

@@ -2,7 +2,7 @@ package com.fxexperience.javafx.animation;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
@@ -43,8 +43,7 @@ public class RotateOutDownLeftTransition extends CachedTimelineTransition {
     @Override protected void starting() {
         super.starting();
         rotate = new Rotate(0,0,node.getBoundsInLocal().getHeight());
-        timeline = TimelineBuilder.create()
-            .keyFrames(
+          timeline = new Timeline(
                 new KeyFrame(Duration.millis(0),    
                     new KeyValue(node.opacityProperty(), 1, WEB_EASE),
                     new KeyValue(rotate.angleProperty(), 0, WEB_EASE)
@@ -53,8 +52,7 @@ public class RotateOutDownLeftTransition extends CachedTimelineTransition {
                     new KeyValue(node.opacityProperty(), 0, WEB_EASE),
                     new KeyValue(rotate.angleProperty(), 90, WEB_EASE)
                 )
-            )
-            .build();
+            );
         node.getTransforms().add(rotate);
     }
 

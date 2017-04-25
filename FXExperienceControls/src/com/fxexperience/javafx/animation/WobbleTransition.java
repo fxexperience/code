@@ -2,7 +2,7 @@ package com.fxexperience.javafx.animation;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
@@ -33,8 +33,7 @@ public class WobbleTransition  extends CachedTimelineTransition {
     public WobbleTransition(final Node node) {
         super(
             node,
-            TimelineBuilder.create()
-                .keyFrames(
+           new Timeline(
                     new KeyFrame(Duration.millis(0),    
                         new KeyValue(node.translateXProperty(), 0, WEB_EASE),
                         new KeyValue(node.rotateProperty(), 0, WEB_EASE)
@@ -64,7 +63,6 @@ public class WobbleTransition  extends CachedTimelineTransition {
                         new KeyValue(node.rotateProperty(), 0, WEB_EASE)
                     )
                 )
-                .build()
             );
         setCycleDuration(Duration.seconds(1));
         setDelay(Duration.seconds(0.2));

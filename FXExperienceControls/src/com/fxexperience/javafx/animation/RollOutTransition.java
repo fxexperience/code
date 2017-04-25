@@ -1,11 +1,9 @@
 package com.fxexperience.javafx.animation;
 
-import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
-import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 /**
@@ -41,8 +39,7 @@ public class RollOutTransition extends CachedTimelineTransition {
 
     @Override protected void starting() {
         super.starting();
-        timeline = TimelineBuilder.create()
-            .keyFrames(
+        timeline = new Timeline(
                 new KeyFrame(Duration.millis(0),    
                     new KeyValue(node.opacityProperty(), 1, WEB_EASE),
                     new KeyValue(node.translateXProperty(), 0, WEB_EASE),
@@ -53,8 +50,7 @@ public class RollOutTransition extends CachedTimelineTransition {
                     new KeyValue(node.translateXProperty(), node.getBoundsInLocal().getWidth(), WEB_EASE),
                     new KeyValue(node.rotateProperty(), 120, WEB_EASE)
                 )
-            )
-            .build();
+            );
     }
 
     @Override protected void stopping() {

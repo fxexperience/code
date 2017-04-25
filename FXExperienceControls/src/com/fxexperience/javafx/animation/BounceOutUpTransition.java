@@ -2,7 +2,7 @@ package com.fxexperience.javafx.animation;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
@@ -41,8 +41,7 @@ public class BounceOutUpTransition extends CachedTimelineTransition {
 
     @Override protected void starting() {
         double endY = -node.localToScene(0, 0).getY() -node.getBoundsInParent().getHeight();
-        timeline = TimelineBuilder.create()
-                .keyFrames(
+           timeline = new Timeline(
                     new KeyFrame(Duration.millis(0),    
                         new KeyValue(node.translateYProperty(), 0, WEB_EASE)
                     ),
@@ -54,8 +53,7 @@ public class BounceOutUpTransition extends CachedTimelineTransition {
                         new KeyValue(node.opacityProperty(), 0, WEB_EASE),
                         new KeyValue(node.translateYProperty(), endY, WEB_EASE)
                     )
-                )
-                .build();
+                );
         super.starting();
     }
 

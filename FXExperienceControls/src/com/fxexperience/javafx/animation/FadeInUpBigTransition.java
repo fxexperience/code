@@ -2,7 +2,7 @@ package com.fxexperience.javafx.animation;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
@@ -38,8 +38,7 @@ public class FadeInUpBigTransition extends CachedTimelineTransition {
 
     @Override protected void starting() {
         double startY = node.getScene().getHeight() - node.localToScene(0, 0).getY();
-        timeline = TimelineBuilder.create()
-                .keyFrames(
+            timeline = new Timeline(
                     new KeyFrame(Duration.millis(0),    
                         new KeyValue(node.opacityProperty(), 0, WEB_EASE),
                         new KeyValue(node.translateYProperty(), startY, WEB_EASE)
@@ -48,8 +47,7 @@ public class FadeInUpBigTransition extends CachedTimelineTransition {
                         new KeyValue(node.opacityProperty(), 1, WEB_EASE),
                         new KeyValue(node.translateYProperty(), 0, WEB_EASE)
                     )
-                )
-                .build();
+                );
         super.starting();
     }
 }

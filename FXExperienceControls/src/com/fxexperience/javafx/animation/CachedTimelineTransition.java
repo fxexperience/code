@@ -3,7 +3,6 @@ package com.fxexperience.javafx.animation;
 import javafx.animation.Interpolator;
 import javafx.animation.Timeline;
 import javafx.animation.Transition;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.CacheHint;
 import javafx.scene.Node;
@@ -44,16 +43,14 @@ public class CachedTimelineTransition extends Transition {
         this.node = node;
         this.timeline = timeline;
         this.useCache = useCache;
-        statusProperty().addListener(new ChangeListener<Status>() {
-            @Override public void changed(ObservableValue<? extends Status> ov, Status t, Status newStatus) {
-                switch(newStatus) {
-                    case RUNNING:
-                        starting();
-                        break;
-                    default: 
-                        stopping();
-                        break;
-                }
+        statusProperty().addListener((ObservableValue<? extends Status> ov, Status t, Status newStatus) -> {
+            switch(newStatus) {
+                case RUNNING:
+                    starting();
+                    break;
+                default:
+                    stopping();
+                    break;
             }
         });
     }

@@ -3,7 +3,7 @@ package com.fxexperience.javafx.animation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
@@ -61,32 +61,30 @@ public class HingeTransition extends CachedTimelineTransition {
         super.starting();
         double endY = node.getScene().getHeight() - node.localToScene(0, 0).getY();
         rotate = new Rotate(0,0,0);
-        timeline = TimelineBuilder.create()
-            .keyFrames(
-                new KeyFrame(Duration.millis(0),    
-                    new KeyValue(rotate.angleProperty(), 0, Interpolator.EASE_BOTH)
+        timeline = new Timeline(
+                new KeyFrame(Duration.millis(0),
+                        new KeyValue(rotate.angleProperty(), 0, Interpolator.EASE_BOTH)
                 ),
-                new KeyFrame(Duration.millis(200),    
-                    new KeyValue(rotate.angleProperty(), 80, Interpolator.EASE_BOTH)
+                new KeyFrame(Duration.millis(200),
+                        new KeyValue(rotate.angleProperty(), 80, Interpolator.EASE_BOTH)
                 ),
-                new KeyFrame(Duration.millis(400),    
-                    new KeyValue(rotate.angleProperty(), 60, Interpolator.EASE_BOTH)
+                new KeyFrame(Duration.millis(400),
+                        new KeyValue(rotate.angleProperty(), 60, Interpolator.EASE_BOTH)
                 ),
-                new KeyFrame(Duration.millis(600),    
-                    new KeyValue(rotate.angleProperty(), 80, Interpolator.EASE_BOTH)
+                new KeyFrame(Duration.millis(600),
+                        new KeyValue(rotate.angleProperty(), 80, Interpolator.EASE_BOTH)
                 ),
-                new KeyFrame(Duration.millis(800),    
-                    new KeyValue(node.opacityProperty(), 1, Interpolator.EASE_BOTH),
-                    new KeyValue(node.translateYProperty(), 0, Interpolator.EASE_BOTH),
-                    new KeyValue(rotate.angleProperty(), 60, Interpolator.EASE_BOTH)
+                new KeyFrame(Duration.millis(800),
+                        new KeyValue(node.opacityProperty(), 1, Interpolator.EASE_BOTH),
+                        new KeyValue(node.translateYProperty(), 0, Interpolator.EASE_BOTH),
+                        new KeyValue(rotate.angleProperty(), 60, Interpolator.EASE_BOTH)
                 ),
-                new KeyFrame(Duration.millis(1000),    
-                    new KeyValue(node.opacityProperty(), 0, Interpolator.EASE_BOTH),
-                    new KeyValue(node.translateYProperty(), endY, Interpolator.EASE_BOTH),
-                    new KeyValue(rotate.angleProperty(), 60, Interpolator.EASE_BOTH)
+                new KeyFrame(Duration.millis(1000),
+                        new KeyValue(node.opacityProperty(), 0, Interpolator.EASE_BOTH),
+                        new KeyValue(node.translateYProperty(), endY, Interpolator.EASE_BOTH),
+                        new KeyValue(rotate.angleProperty(), 60, Interpolator.EASE_BOTH)
                 )
-            )
-            .build();
+        );
         node.getTransforms().add(rotate);
     }
 

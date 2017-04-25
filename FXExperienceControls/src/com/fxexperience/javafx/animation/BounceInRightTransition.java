@@ -2,7 +2,7 @@ package com.fxexperience.javafx.animation;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
@@ -44,24 +44,23 @@ public class BounceInRightTransition extends CachedTimelineTransition {
 
     @Override protected void starting() {
         double startX = node.getScene().getWidth() - node.localToScene(0, 0).getX();
-        timeline = TimelineBuilder.create()
-                .keyFrames(
+        timeline = new Timeline();
+                timeline.getKeyFrames().add(
                     new KeyFrame(Duration.millis(0),    
                         new KeyValue(node.opacityProperty(), 0, WEB_EASE),
                         new KeyValue(node.translateXProperty(), startX, WEB_EASE)
-                    ),
-                    new KeyFrame(Duration.millis(600),    
+                    ));
+                    timeline.getKeyFrames().add(new KeyFrame(Duration.millis(600),    
                         new KeyValue(node.opacityProperty(), 1, WEB_EASE),
                         new KeyValue(node.translateXProperty(), -30, WEB_EASE)
-                    ),
-                    new KeyFrame(Duration.millis(800),    
+                    ));
+                    timeline.getKeyFrames().add(new KeyFrame(Duration.millis(800),    
                         new KeyValue(node.translateXProperty(), 10, WEB_EASE)
-                    ),
-                    new KeyFrame(Duration.millis(1000),    
+                    ));
+                    timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1000),    
                         new KeyValue(node.translateXProperty(), 0, WEB_EASE)
                     )
-                )
-                .build();
+                );
         super.starting();
     }
 }

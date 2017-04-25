@@ -2,7 +2,7 @@ package com.fxexperience.javafx.animation;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
-import javafx.animation.TimelineBuilder;
+import javafx.animation.Timeline;
 import javafx.scene.Camera;
 import javafx.scene.Node;
 import javafx.scene.PerspectiveCamera;
@@ -38,8 +38,7 @@ public class FlipOutXTransition extends CachedTimelineTransition {
     public FlipOutXTransition(final Node node) {
         super(
             node,
-            TimelineBuilder.create()
-                .keyFrames(
+           new Timeline(
                     new KeyFrame(Duration.millis(0), 
                         new KeyValue(node.rotateProperty(), 0, WEB_EASE),
                         new KeyValue(node.opacityProperty(), 1, WEB_EASE)
@@ -49,7 +48,6 @@ public class FlipOutXTransition extends CachedTimelineTransition {
                         new KeyValue(node.opacityProperty(), 0, WEB_EASE)
                     )
                 )
-                .build()
             );
         setCycleDuration(Duration.seconds(1));
         setDelay(Duration.seconds(0.2));
