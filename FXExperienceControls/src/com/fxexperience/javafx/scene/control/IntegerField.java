@@ -11,7 +11,7 @@ public class IntegerField extends InputField {
      * The value of the IntegerField. If null, the value will be treated as "0", but
      * will still actually be null.
      */
-    private IntegerProperty value = new SimpleIntegerProperty(this, "value");
+    private final IntegerProperty value = new SimpleIntegerProperty(this, "value");
     public final int getValue() { return value.get(); }
     public final void setValue(int value) { this.value.set(value); }
     public final IntegerProperty valueProperty() { return value; }

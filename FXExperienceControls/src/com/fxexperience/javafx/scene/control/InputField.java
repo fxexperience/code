@@ -72,7 +72,7 @@ public class InputField extends Control {
      *
      * The action handler is normally called when the user types the ENTER key.
      */
-    private ObjectProperty<EventHandler<ActionEvent>> onAction = new ObjectPropertyBase<EventHandler<ActionEvent>>() {
+    private final ObjectProperty<EventHandler<ActionEvent>> onAction = new ObjectPropertyBase<EventHandler<ActionEvent>>() {
         @Override protected void invalidated() {
             setEventHandler(ActionEvent.ACTION, get());
         }
@@ -91,7 +91,7 @@ public class InputField extends Control {
         getStyleClass().setAll("input-field");
     }
 
-    @Override protected String getUserAgentStylesheet() {
+    @Override public String getUserAgentStylesheet() {
         return getClass().getResource("InputField.css").toExternalForm();
     }
 }
