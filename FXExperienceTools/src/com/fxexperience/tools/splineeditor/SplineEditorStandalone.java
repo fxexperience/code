@@ -4,7 +4,6 @@ import com.fxexperience.tools.Tool;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.SceneBuilder;
 import javafx.stage.Stage;
 
 /**
@@ -18,12 +17,14 @@ public class SplineEditorStandalone extends Application {
     
     @Override public void start(Stage primaryStage) throws IOException {
         SplineEditor splineEditor = new SplineEditor();
-        primaryStage.setScene(SceneBuilder.create()
-                .root(splineEditor)
-                .width(800)
-                .height(600)
-                .stylesheets(Tool.class.getResource("Tools.css").toExternalForm())
-                .build());
+        Scene scene = new Scene(splineEditor);
+        scene.getStylesheets().add(Tool.class.getResource("Tools.css").toExternalForm());
+      
+        primaryStage.setWidth(800);
+        primaryStage.setHeight(600);
+        primaryStage.setScene(scene);
         primaryStage.show();
+        
+   
     }
 }
