@@ -1,7 +1,6 @@
 package com.fxexperience.javafx.scene.control.skin;
 
 import com.fxexperience.javafx.scene.control.DoubleField;
-import com.fxexperience.javafx.scene.control.IntegerField;
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
@@ -10,7 +9,7 @@ import javafx.scene.Node;
 /**
  */
 public class DoubleFieldSkin extends InputFieldSkin {
-    private InvalidationListener doubleFieldValueListener;
+    private final InvalidationListener doubleFieldValueListener;
 
     /**
      * Create a new DoubleFieldSkin.
@@ -22,10 +21,8 @@ public class DoubleFieldSkin extends InputFieldSkin {
         // Whenever the value changes on the control, we need to update the text
         // in the TextField. The only time this is not the case is when the update
         // to the control happened as a result of an update in the text textField.
-        control.valueProperty().addListener(doubleFieldValueListener = new InvalidationListener() {
-            @Override public void invalidated(Observable observable) {
-                updateText();
-            }
+        control.valueProperty().addListener(doubleFieldValueListener = (Observable observable) -> {
+            updateText();
         });
     }
 
@@ -51,6 +48,7 @@ public class DoubleFieldSkin extends InputFieldSkin {
         super.dispose();
     }
 
+    @Override
     protected boolean accept(String text) {
         if (text.length() == 0) return true;
         if (text.matches("[0-9\\.]*")) {
@@ -62,10 +60,12 @@ public class DoubleFieldSkin extends InputFieldSkin {
         return false;
     }
 
+    @Override
     protected void updateText() {
         getTextField().setText("" + ((DoubleField) control).getValue());
     }
 
+    @Override
     protected void updateValue() {
         double value = ((DoubleField) control).getValue();
         double newValue;
@@ -78,10 +78,8 @@ public class DoubleFieldSkin extends InputFieldSkin {
         } catch (NumberFormatException ex) {
             // Empty string most likely
             ((DoubleField) control).setValue(0);
-            Platform.runLater(new Runnable() {
-                @Override public void run() {
-                    getTextField().positionCaret(1);
-                }
+            Platform.runLater(() -> {
+                getTextField().positionCaret(1);
             });
         }
     }

@@ -7,7 +7,6 @@ import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.event.EventDispatchChain;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Skin;
 import javafx.scene.control.TextField;
@@ -78,10 +77,8 @@ public abstract class InputFieldSkin implements Skin<InputField> {
 
         // Whenever the text of the textField changes, we may need to
         // update the value.
-        textField.textProperty().addListener(new InvalidationListener() {
-            @Override public void invalidated(Observable observable) {
-                updateValue();
-            }
+        textField.textProperty().addListener((Observable observable) -> {
+            updateValue();
         });
 
         // Right now there is some funny business regarding focus in JavaFX. So

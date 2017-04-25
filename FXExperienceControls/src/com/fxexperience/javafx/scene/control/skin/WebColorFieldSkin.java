@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 /**
  */
 public class WebColorFieldSkin extends InputFieldSkin {
-    private InvalidationListener integerFieldValueListener;
+    private final InvalidationListener integerFieldValueListener;
 
     /**
      * Create a new IntegerFieldSkin.
@@ -21,10 +21,8 @@ public class WebColorFieldSkin extends InputFieldSkin {
         // Whenever the value changes on the control, we need to update the text
         // in the TextField. The only time this is not the case is when the update
         // to the control happened as a result of an update in the text textField.
-        control.valueProperty().addListener(integerFieldValueListener = new InvalidationListener() {
-            @Override public void invalidated(Observable observable) {
-                updateText();
-            }
+        control.valueProperty().addListener(integerFieldValueListener = (Observable observable) -> {
+            updateText();
         });
     }
 
@@ -49,20 +47,20 @@ public class WebColorFieldSkin extends InputFieldSkin {
         super.dispose();
     }
 
+    @Override
     protected boolean accept(String text) {
         if (text.length() == 0) return true;
-        if (text.matches("#[a-fA-F0-9]{0,6}")) {
-            return true;
-        }
-        return false;
+        return text.matches("#[a-fA-F0-9]{0,6}");
     }
 
+    @Override
     protected void updateText() {
         Color color = ((WebColorField) control).getValue();
         if (color == null) color = Color.BLACK;
         getTextField().setText(getWebColor(color));
     }
 
+    @Override
     protected void updateValue() {
         Color value = ((WebColorField) control).getValue();
         String text = getTextField().getText() == null ? "" : getTextField().getText().trim().toUpperCase();
