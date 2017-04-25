@@ -32,7 +32,9 @@
 #BrightnessSlider  .thumb{
     -fx-padding: 7px;
 }
-
+#Saturation-label {
+    -fx-text-fill: #c9c7c8;
+}
 #SaturationSlider .track {
     -fx-background-color:
         derive(-fx-background,50%),
