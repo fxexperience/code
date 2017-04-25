@@ -1,7 +1,7 @@
 package com.fxexperience.tools.derivationcalc;
 
 import com.fxexperience.javafx.scene.control.colorpicker.ColorPicker;
-import com.sun.javafx.Utils;
+import com.sun.javafx.util.Utils;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.binding.StringBinding;
@@ -30,8 +30,8 @@ public class DerivationCalcContent implements Initializable {
     @FXML private Label reverseDerivationLabel;
     @FXML private Label reverseResultLabel;
     @FXML private ImageView alert;
-    private ColorPicker baseColorPicker = new ColorPicker(Color.GREY);
-    private ColorPicker desiredColorPicker = new ColorPicker(Color.GREY);
+    private final ColorPicker baseColorPicker = new ColorPicker(Color.GREY);
+    private final ColorPicker desiredColorPicker = new ColorPicker(Color.GREY);
     private Region derivedResultColor;
     private Region reverseResultColor;
     

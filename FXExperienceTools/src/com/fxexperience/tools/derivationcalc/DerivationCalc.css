@@ -1,5 +1,5 @@
 #anchorPane {
-    -fx-background-image: url("dark_wood.png");
+    -fx-background-image: url("dirtyshirt.png");
     -fx-background: black;
 }
 #gridPane {
@@ -22,5 +22,6 @@
         linear-gradient(to bottom, derive(-fx-color,-19%),derive(-fx-color,61%));
 }
 .color-picker {
+    -fx-text-fill: #333333;
     -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
 }
