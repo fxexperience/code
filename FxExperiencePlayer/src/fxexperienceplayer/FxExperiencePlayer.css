@@ -1,0 +1,84 @@
+.button { 
+    -fx-background-color: transparent;
+}
+.button:hover { 
+    -fx-background-color: rgba(255,255,255,0.1);
+}
+.button:pressed { 
+    -fx-background-color: rgba(0,0,0,0.1);
+}
+.button:focused {
+    -fx-effect: dropshadow( three-pass-box , red , 5 , 0.5 , 0 , 0 );
+    -fx-border-color: red;
+    -fx-border-radius: 2px;
+}
+
+.slider *.thumb {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 84 53 0 0;
+    -fx-background-image: url("images/thumb.png");
+}
+.slider:focused *.thumb {
+    -fx-effect: dropshadow( three-pass-box , rgba(255,0,0,0.5) , 8 , 0.5 , 0 , 0 );
+}
+.slider *.track {
+    -fx-background-color: transparent;
+}
+.root > .label {
+    -fx-text-fill: #f01111;
+    -fx-effect: dropshadow( three-pass-box , #b10000 , 18 , 0.5 , 0 , 0 );
+}
+.slider.knobStyle {
+    -fx-skin: "fxexperienceplayer.KnobSkin";
+}
+.slider.knobStyle .knob {
+    -fx-background-color: blue;
+    -fx-background-radius: 100;
+    -fx-padding: 50;
+}
+.slider.knobStyle:focused .knob {
+    -fx-effect: dropshadow( three-pass-box , red , 5 , 0.5 , 0 , 0 );
+}
+.slider.knobStyle .knobDot {
+    -fx-background-color: red;
+    -fx-background-radius: 100;
+    -fx-padding: 2;
+}
+#balance .knob {
+    -fx-background-color: transparent;
+    -fx-background-image: url("images/balance.png");
+    -fx-background-position: center center;
+    -fx-padding: 40.5;
+}
+#balance .knobDot {
+    -fx-background-color: transparent;
+}   
+#balance:focused .knob {
+    -fx-effect: null;
+    -fx-border-color: rgba(255,0,0,0.6);
+    -fx-border-radius: 500; 
+}
+#volume .knob {
+    -fx-background-color: transparent;
+    -fx-background-image: url("images/volume.png");
+    -fx-background-position: center center;
+    -fx-padding: 85;
+}
+#volume:focused .knob {
+    -fx-effect: null;
+    -fx-border-color: rgba(255,0,0,0.6);
+    -fx-border-radius: 500; 
+}
+#volume .knobDot {
+    -fx-background-color: transparent;
+}   
+#volume .knobOverlay {
+    -fx-background-color: 
+        linear (0%,0%) to (0%,100%) stops (0,rgba(255,255,255,0.1)) (1,rgba(0,0,0,0.5));
+    -fx-background-radius: 500; 
+    -fx-background-insets: 0; 
+    -fx-background-image: url("images/volume-highlights.png");
+    -fx-background-position: center center;
+}
