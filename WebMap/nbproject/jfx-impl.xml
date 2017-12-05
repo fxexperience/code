@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jfx-impl" default="jfx-deployment" basedir="..">
+   
+   <target name="check-jfx-deployment">
+        <condition property="jfx-deployment-available">
+            <typefound name="fxjar"/>
+        </condition>
+   </target>
+   
+   <target name="jfx-deployment" depends="check-jfx-deployment" if="jfx-deployment-available">
+        <!-- settings default width and height values -->
+        <property name="jfx.applet.width" value="800"/>
+        <property name="jfx.applet.height" value="600"/>
+        
+        <basename property="jfx.deployment.jar" file="${dist.jar}"/>
+        <property name="jfx.deployment.dir" location="${dist.dir}"/>      
+        <!-- hack for beta: remove the just generated standard non-fx deployment files to be replaced by the fx ones -->
+        <delete file="${jfx.deployment.dir}/${jfx.deployment.jar}"/>
+        <delete file="${jfx.deployment.dir}/README.TXT"/>
+        <!-- hack end -->
+
+        <fxjar destfile="${jfx.deployment.dir}/${jfx.deployment.jar}"
+             applicationClass="${main.class}" >
+            <fileset dir="${build.classes.dir}"/>
+            <manifest>
+              <attribute name="Implementation-Vendor" value="${application.vendor}"/>
+              <attribute name="Implementation-Title" value="${application.title}"/>
+              <attribute name="Implementation-Version" value="1.0"/>
+            </manifest>
+        </fxjar>
+
+        <fxdeploy width="${jfx.applet.width}" height="${jfx.applet.height}"
+                  outdir="${jfx.deployment.dir}" embedJNLP="true"
+                  outfile="${application.title}">
+            <info title="${application.title}"
+                  vendor="${application.vendor}"/>
+            <application name="${application.title}"
+                         appclass="${main.class}"/>
+            <resources type="eager">
+               <fileset dir="${jfx.deployment.dir}">
+                  <include name="${jfx.deployment.jar}"/>
+                  <include name="lib/*.jar"/>
+                  <exclude name="**/jfxrt.jar"/>
+               </fileset>
+            </resources>
+        </fxdeploy>  
+    </target>
+    
+</project>

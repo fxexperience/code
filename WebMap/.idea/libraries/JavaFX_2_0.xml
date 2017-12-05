@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="JavaFX 2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Documents/Projects/jfx-graphics/artifacts/sdk/rt/lib/jfxrt.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

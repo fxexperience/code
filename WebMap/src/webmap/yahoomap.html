@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0px; padding: 0px }
+  #map_canvas { height: 100%; background-color: #666970; }
+</style>
+<script type="text/javascript" src="http://api.maps.yahoo.com/ajaxymap?v=3.8&appid=****** PUT YOUR API KEY HERE ******"></script>
+<script type="text/javascript">
+  function initialize() {
+    document.map = new YMap(document.getElementById('map_canvas'));
+    document.map.setMapType(YAHOO_MAP_REG);
+	document.map.drawZoomAndCenter("95054",3);
+	
+	document.zoomIn = function zoomIn() {
+    	var zoomLevel = document.map.getZoomLevel();
+    	if (zoomLevel > 1) document.map.setZoomLevel(zoomLevel - 1);
+    }
+    
+    document.zoomOut = function zoomOut() {
+    	var zoomLevel = document.map.getZoomLevel();
+    	if (zoomLevel <= 16) document.map.setZoomLevel(zoomLevel + 1);
+    }
+    
+    document.setMapTypeRoad = function setMapTypeRoad() {
+		document.map.setMapType(YAHOO_MAP_REG);
+    }
+    document.setMapTypeSatellite = function setMapTypeSatellite() {
+		document.map.setMapType(YAHOO_MAP_SAT);
+    }
+    document.setMapTypeHybrid = function setMapTypeHybrid() {
+		document.map.setMapType(YAHOO_MAP_HYB);
+    }
+    document.setMapTypeTerrain = function setMapTypeTerrain() {
+		document.map.setMapType(YAHOO_MAP_HYB);
+    }
+        
+    document.goToLocation = function goToLocation(searchString) {
+    	document.map.drawZoomAndCenter(searchString ,document.map.getZoomLevel());
+    }
+  }
+</script>
+</head>
+<body onload="initialize()">
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
+</html>
