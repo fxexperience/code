@@ -1,0 +1,9 @@
+apply from: 'https://repository-javafx-gradle-plugin.forge.cloudbees.com/release/javafx.plugin'
+apply plugin: 'maven'
+
+group = 'com.fxexperience.tools'
+version = '1.1'
+
+jar {
+    enabled = true
+}

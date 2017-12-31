@@ -1,0 +1,13 @@
+apply from: 'https://repository-javafx-gradle-plugin.forge.cloudbees.com/release/javafx.plugin'
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    compile 'com.fxexperience.tools:FXExperienceControls:1.1'
+}
+
+javafx {
+    mainClass = 'com.fxexperience.tools.ToolsApp'
+}
